@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Assign3;assembly=Assign3"
+             x:Class="Assign3.Page"
+             BindingContext="{Binding Source={x:Static Application.Current},Path=AppData.CurrentIImage}">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:DoubleToIntConverter x:Key="intConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ScrollView>
+    <StackLayout>
+      <Switch x:Name="timerToggle" VerticalOptions="Start" HorizontalOptions="End" Toggled="OnOffSwitchToggled"/>
+      <Label x:Name="label1" FontSize="Micro" Text="Time Remaining" HorizontalOptions="Start" VerticalOptions="Start" />
+      <Image x:Name="image" VerticalOptions="Start" HorizontalOptions="Center" HeightRequest="150" WidthRequest="150" PropertyChanged="OnImagePropertyChanged"/>
+      <ActivityIndicator x:Name="activityIndicator" />
+      <Stepper x:Name="stepper" VerticalOptions="Center" HorizontalOptions="Center" Maximum="60" Minimum="1"/>
+      <Slider x:Name="slider" Maximum="60" Minimum="1" Value ="{Binding Source = {x:Reference stepper}, Path=Value, Mode = TwoWay, Converter={StaticResource intConverter},ConverterParameter=1 }"/>
+      <Entry x:Name="entry"  Keyboard ="Numeric" Text ="{Binding Source={x:Reference stepper}, Path=Value, Mode = TwoWay}" TextChanged="OnEntryCompleted" />
+      <Button Text="Click Button to view Photo List" Clicked ="OnButtonClicked"/>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

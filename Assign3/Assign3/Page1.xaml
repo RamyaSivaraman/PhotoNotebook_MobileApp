@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Assign3;assembly=Assign3"
+             x:Class="Assign3.Page1" 
+             BindingContext="{Binding Source={x:Static Application.Current}, Path=AppData}">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+  </ContentPage.Padding>
+
+  <ScrollView>
+    <StackLayout>
+      <Button Text="Add Image " VerticalOptions="Center" FontAttributes="Bold"  Clicked="AddImage" />
+      <Label Text ="List of Existing Images" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" />
+      <StackLayout>
+        <ListView ItemsSource="{Binding ImageCollection}">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ImageCell  ImageSource="{Binding ImgSource}"
+                          Text ="{Binding Title}"
+                          Detail="{Binding Detail}" >
+                <ImageCell.ContextActions>
+                  <MenuItem Text="Move to top" Clicked="MoveImageToTop" CommandParameter="{Binding .}"/>
+                  <MenuItem Text="Move to bottom" Clicked="MoveImageToBottom" CommandParameter="{Binding .}" />
+                  <MenuItem Text="Remove" IsDestructive="True" Clicked="RemoveImage" CommandParameter="{Binding .}"  />
+                  <MenuItem Text="Edit" Clicked="EditImage" CommandParameter="{Binding .}"  />
+                </ImageCell.ContextActions>
+              </ImageCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

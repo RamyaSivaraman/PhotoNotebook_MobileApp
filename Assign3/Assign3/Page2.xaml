@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Assign3;assembly=Assign3"
+             x:Class="Assign3.Page2"
+             BindingContext="{Binding Source={x:Static Application.Current},Path=AppData.CurrentIImage}">
+  <ScrollView>
+    <StackLayout Orientation="Vertical">
+      <Label Text ="Image Details Page" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" />
+      <Entry x:Name="EditUrlentry" VerticalOptions="Center"  Placeholder="UrlEntry" Text="{Binding Source}" IsEnabled="True" />
+      <Entry x:Name="EditTitle" VerticalOptions="Center"  Placeholder="Title" Text="{Binding Title}" IsEnabled="True"/>
+      <DatePicker x:Name="EditPictakenon" VerticalOptions="Center" Date="{Binding Date}" IsEnabled="True" />
+      <Button Text="Save" VerticalOptions="Center" FontAttributes="Bold" Clicked="SaveImage" />
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

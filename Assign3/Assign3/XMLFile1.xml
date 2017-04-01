@@ -1,0 +1,44 @@
+﻿<ImageList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ImageSchool> Images </ImageSchool>
+  <Images>
+
+    <Image>
+      <Date>3/10/2017</Date>
+      <Title>ImageFromFile</Title>
+      <Detail>Res2.jpg</Detail>
+    </Image>
+
+    <Image>
+      <Date>3/16/2017</Date>
+      <Title>ImageFromResource</Title>
+      <Detail>Assign3.resourcepic.jpg</Detail>
+    </Image>
+
+    <Image>
+      <Date>7/16/2017</Date>
+      <Title>ImageFromStream</Title>
+      <Detail>Assign3.streampic.jpg</Detail>
+    </Image>
+    
+    
+    
+<Image>
+      <Source>https://developer.xamarin.com/demo/IMG_0866.JPG</Source>
+      <Date>3/10/2017</Date>
+      <Title>National Forest</Title>
+      <Detail>https://developer.xamarin.com/demo/img_0866.jpg </Detail> 
+</Image>
+    
+<Image>
+      <Source>https://developer.xamarin.com/demo/IMG_0308.JPG</Source>
+      <Date>5/10/2017</Date>
+      <Title>Scenic Beauty</Title>
+      <Detail>https://developer.xamarin.com/demo/IMG_0308.JPG</Detail>
+</Image>
+  </Images>
+    </ImageList>
+    
+
+  
+  
